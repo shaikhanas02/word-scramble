@@ -98,9 +98,24 @@ const randomText = document.querySelector('.hint span') ;
 const refreshBtn = document.querySelector('.refresh-word') ;
 const checkBtn = document.querySelector('.check-word') ;
 const inputField = document.querySelector('input') ;
-let correctWord ;
+const timeText = document.querySelector('.time b')
+let correctWord,timer ;
+
+const initTimer = maxTime => {
+    clearInterval(timer) ;
+    timer = setInterval(()=>{
+        if(maxTime>0){
+            maxTime-- ;
+            return timeText.innerText = maxTime ;
+        }
+        clearInterval(timer) ;
+        alert(`Time Off! ${correctWord.toUpperCase()} is the correct word`) ;
+    },1000)
+        //initGame() ;
+}
 
 const initGame = () =>{
+    initTimer(31) ;
 let randomObj = words[Math.floor(Math.random()* words.length)] ;
 let wordArray = randomObj.word.split("") ;
 for(let i = 0 ; i< wordArray.length ; i++){
