@@ -45,7 +45,7 @@ padding: 25px 20px 35px ;
     margin-bottom: 10px;
 }
 
-.details p b{
+.details p span{
     font-weight: 500;
 }
 .content input{
@@ -69,4 +69,8 @@ padding: 25px 20px 35px ;
     font-size: 17px ;
     width: 46% ;
     border-radius: 5px;
+}
+
+button:hover{
+    cursor: pointer;
 }
